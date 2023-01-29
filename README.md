@@ -1,5 +1,5 @@
 # NORMY: Non-uniform History Modeling for Open Retrieval Conversational Question Answering
-Source code and dataset repository for our paper NORMY: Non-uniform History Modeling for Open Retrieval Conversational Question Answering.
+Source code and dataset repository for our paper NORMY: Non-uniform History Modeling for Open Retrieval Conversational Question Answering. All source codes have been tested in Ubuntu-20.04 system.
 
 ## Datasets
 We have used three datasets for our experiments.
