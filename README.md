@@ -62,7 +62,7 @@ sudo make install
 ```
 7. If you see an error related to the shared mode of JCC remove `--shared` from Makefile.
 
-### Install Pke
+### Pke
 For keyphrase extraction we use open source library `pke`. To install
 ```bash
 pip3 install git+https://github.com/boudinfl/pke.git
@@ -73,7 +73,7 @@ pip3 install -U spacy
 python3 -m spacy download en_core_web_sm
 ```
 ## Experiments
-To reproduce our results from Table 6 in our paper, run the following codes.
+To reproduce the results from Table 6 in our paper, run the following codes.
 ### OrConvQA
 To create Lucene index for OrConvQA data:
 ```bash
