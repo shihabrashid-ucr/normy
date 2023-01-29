@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import numpy as np
 
-with open('history_models/convinse/normy_retr.json') as f:
+with open('history_models/convmix/normy_retr.json') as f:
     dial = json.load(f)
 
 tokenizer = AutoTokenizer.from_pretrained("amberoad/bert-multilingual-passage-reranking-msmarco")
@@ -70,7 +70,7 @@ for d in range(0, len(dial)):
     innerjson['history'] = history
     innerjson['reranked_retr'] = rerankedlist
     outermostlist.append(innerjson)
-with open('history_models/convinse/normy_reranker.json', 'w') as outfile:
+with open('history_models/convmix/normy_reranker.json', 'w') as outfile:
     json.dump(outermostlist, outfile, indent = 4)
     
 

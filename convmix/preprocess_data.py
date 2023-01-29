@@ -1,10 +1,10 @@
 import json
 import pickle
 
-with open('datasets/convinse/train_set_ALL.json') as f:
+with open('datasets/convmix/train_set_ALL.json') as f:
     data = json.load(f)
 
-with open('datasets/convinse/wikipedia_dump.pickle', 'rb') as infile:
+with open('datasets/convmix/wikipedia_dump.pickle', 'rb') as infile:
     corpus_dicc = pickle.load(infile)
 
 outer = []
@@ -52,5 +52,5 @@ for d in data:
         his.append(hisjson)
     cntr += 1
 
-    with open('datasets/convinse/convinse_orqa_format.json', 'w') as outfile:
+    with open('datasets/convmix/convinse_orqa_format.json', 'w') as outfile:
         json.dump(outer, outfile, indent = 4)

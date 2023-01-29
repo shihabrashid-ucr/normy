@@ -33,7 +33,7 @@ def create_index(dir):
     contextType.setTokenized(True)
     contextType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS)
 
-    with open('datasets/convinse/wikipedia_dump.pickle', 'rb') as infile:
+    with open('datasets/convmix/wikipedia_dump.pickle', 'rb') as infile:
         corpus_dicc = pickle.load(infile)
     print(f'pickle file loaded')
     i = 0
@@ -53,6 +53,6 @@ def create_index(dir):
 
 
 lucene.initVM(vmargs=['-Djava.awt.headless=true'])
-create_index('convinse_lucene_index/')
+create_index('convmix_lucene_index/')
 
 

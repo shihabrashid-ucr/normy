@@ -162,7 +162,7 @@ def process_answer(question, paragraph, model, chunked, max_len):
                 max_index = i
         return answerlist[max_index], max_score
 
-with open('history_models/convinse/normy_reranker.json') as f:
+with open('history_models/convmix/normy_reranker.json') as f:
     dial = json.load(f)
 nlp = spacy.load('en')
 neuralcoref.add_to_pipe(nlp, greedyness=0.5)

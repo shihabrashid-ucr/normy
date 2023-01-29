@@ -22,7 +22,7 @@ import spacy
 
 #load dialogue
 dial = []
-with open('datasets/convinse/convinse_orqa_format.json') as f:
+with open('datasets/convmix/convinse_orqa_format.json') as f:
     dial = json.load(f)
 
 stoplist = stopwords.words('english')
@@ -192,8 +192,8 @@ for d in range(0, len(dial)): #iterate every dialogue
     innerjson['top_ten_passages'] = top_10
     outermostlist.append(innerjson)
 
-output_dir = 'history_models/convinse/'
+output_dir = 'history_models/convmix/'
 if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-with open('history_models/convinse/normy_retr.json', 'w') as outfile:
+with open('history_models/convmix/normy_retr.json', 'w') as outfile:
     json.dump(outermostlist, outfile, indent = 4)
