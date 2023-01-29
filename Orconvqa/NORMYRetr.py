@@ -21,7 +21,7 @@ import spacy
 
 #load test dialogue data
 dial = []
-with open('/home/ubuntu/Bert/Datasets/Conversational/orconvqa/test.txt') as f:
+with open('datasets/orqa/test.txt') as f:
     for line in f:
         dial.append(json.loads(line))
 

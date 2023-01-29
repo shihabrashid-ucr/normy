@@ -22,7 +22,7 @@ import spacy
 
 #load dialogue
 dial = []
-with open('datasets/doc2dial/doc2dial_orqa_format.json') as f:
+with open('datasets/doc2dial/doc2dial_validation_orconvqa_format_with_pos_cntxt.json') as f:
     dial = json.load(f)
 
 stoplist = stopwords.words('english')
