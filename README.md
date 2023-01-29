@@ -24,7 +24,7 @@ rm wikipedia.zip
 ```
 This will download `wikipedia_dump.pickle` under `datasets/convmix/`. The conversation file `train_set_ALL.json` is already under this subdirectory.
 
-## Experiments
+## Installation
 First install all the requirements.
 ```pbash
 pip3 install -r requirements.txt 
@@ -65,12 +65,42 @@ sudo make install
 ### Install Pke
 For keyphrase extraction we use open source library `pke`. To install
 ```bash
-pipe install git+https://github.com/boudinfl/pke.git
+pip3 install git+https://github.com/boudinfl/pke.git
 ```
 pke relies on `spacy` (>= 3.2.3) for text processing
 ```bash
 pip3 install -U spacy
 python3 -m spacy download en_core_web_sm
 ```
-
-
+## Experiments
+To reproduce our results from Table 6 in our paper, run the following codes.
+### OrConvQA
+To create Lucene index for OrConvQA data:
+```bash
+python3 Orconvqa/create_index.py
+```
+Then run these files in order:
+```bash
+python3 Orconvqa/NORMYRetr.py
+python3 Orconvqa/NORMYReranker.py
+python3 Orconvqa/NORMYReader.py
+```
+### doc2dial
+```bash
+python3 doc2dial/create_index.py
+python3 doc2dial/NORMYRetr.py
+python3 doc2dial/NORMYReranker.py
+python3 doc2dial/NORMYReader.py
+```
+### ConvMix
+To preprocess the conversational data into OrConvQA form:
+```bash
+python3 convmix/preprocess_data.py
+```
+Then
+```bash
+python3 convmix/create_index.py
+python3 convmix/NORMYRetr.py
+python3 convmix/NORMYReranker.py
+python3 convmix/NORMYReader.py
+```
